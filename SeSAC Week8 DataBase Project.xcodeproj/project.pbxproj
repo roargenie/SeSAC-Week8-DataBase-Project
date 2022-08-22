@@ -9,21 +9,45 @@
 /* Begin PBXBuildFile section */
 		F61690F728B3A86800F513DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61690F628B3A86800F513DC /* AppDelegate.swift */; };
 		F61690F928B3A86800F513DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61690F828B3A86800F513DC /* SceneDelegate.swift */; };
-		F61690FB28B3A86800F513DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61690FA28B3A86800F513DC /* ViewController.swift */; };
 		F61690FE28B3A86800F513DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61690FC28B3A86800F513DC /* Main.storyboard */; };
 		F616910028B3A86900F513DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61690FF28B3A86900F513DC /* Assets.xcassets */; };
 		F616910328B3A86900F513DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F616910128B3A86900F513DC /* LaunchScreen.storyboard */; };
+		F616910C28B3A8AE00F513DC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F616910B28B3A8AE00F513DC /* Kingfisher */; };
+		F616910F28B3A8CD00F513DC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F616910E28B3A8CD00F513DC /* Realm */; };
+		F616911128B3A8CD00F513DC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F616911028B3A8CD00F513DC /* RealmSwift */; };
+		F616911828B3A94900F513DC /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616911728B3A94900F513DC /* TodoListModel.swift */; };
+		F616911A28B3A97100F513DC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616911928B3A97100F513DC /* BaseView.swift */; };
+		F616911C28B3A99F00F513DC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616911B28B3A99F00F513DC /* BaseViewController.swift */; };
+		F616911E28B3A9ED00F513DC /* TodoMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616911D28B3A9ED00F513DC /* TodoMainView.swift */; };
+		F616912028B3AB1400F513DC /* TodoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616911F28B3AB1400F513DC /* TodoMainViewController.swift */; };
+		F616912328B3B2D100F513DC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F616912228B3B2D100F513DC /* SnapKit */; };
+		F616912628B3B46C00F513DC /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616912528B3B46C00F513DC /* Transition+Extension.swift */; };
+		F616912828B3B55200F513DC /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616912728B3B55200F513DC /* BaseCollectionViewCell.swift */; };
+		F616912A28B3B5B000F513DC /* TodoMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616912928B3B5B000F513DC /* TodoMainCollectionViewCell.swift */; };
+		F616912C28B3B65D00F513DC /* Protocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616912B28B3B65C00F513DC /* Protocol+Extension.swift */; };
+		F616912E28B3C47100F513DC /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616912D28B3C47100F513DC /* TodoDetailViewController.swift */; };
+		F616913028B3C48B00F513DC /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616912F28B3C48B00F513DC /* TodoDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F61690F328B3A86800F513DC /* SeSAC Week8 DataBase Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC Week8 DataBase Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61690F628B3A86800F513DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F61690F828B3A86800F513DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F61690FA28B3A86800F513DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F61690FD28B3A86800F513DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F61690FF28B3A86900F513DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F616910228B3A86900F513DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F616910428B3A86900F513DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F616911728B3A94900F513DC /* TodoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
+		F616911928B3A97100F513DC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F616911B28B3A99F00F513DC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F616911D28B3A9ED00F513DC /* TodoMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMainView.swift; sourceTree = "<group>"; };
+		F616911F28B3AB1400F513DC /* TodoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMainViewController.swift; sourceTree = "<group>"; };
+		F616912528B3B46C00F513DC /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		F616912728B3B55200F513DC /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		F616912928B3B5B000F513DC /* TodoMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMainCollectionViewCell.swift; sourceTree = "<group>"; };
+		F616912B28B3B65C00F513DC /* Protocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Extension.swift"; sourceTree = "<group>"; };
+		F616912D28B3C47100F513DC /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
+		F616912F28B3C48B00F513DC /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +55,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F616911128B3A8CD00F513DC /* RealmSwift in Frameworks */,
+				F616912328B3B2D100F513DC /* SnapKit in Frameworks */,
+				F616910F28B3A8CD00F513DC /* Realm in Frameworks */,
+				F616910C28B3A8AE00F513DC /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +84,73 @@
 		F61690F528B3A86800F513DC /* SeSAC Week8 DataBase Project */ = {
 			isa = PBXGroup;
 			children = (
+				F616911228B3A8D800F513DC /* TodoList */,
 				F61690F628B3A86800F513DC /* AppDelegate.swift */,
 				F61690F828B3A86800F513DC /* SceneDelegate.swift */,
-				F61690FA28B3A86800F513DC /* ViewController.swift */,
 				F61690FC28B3A86800F513DC /* Main.storyboard */,
 				F61690FF28B3A86900F513DC /* Assets.xcassets */,
 				F616910128B3A86900F513DC /* LaunchScreen.storyboard */,
 				F616910428B3A86900F513DC /* Info.plist */,
 			);
 			path = "SeSAC Week8 DataBase Project";
+			sourceTree = "<group>";
+		};
+		F616911228B3A8D800F513DC /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+				F616912428B3B45800F513DC /* Extension */,
+				F616911328B3A90C00F513DC /* Model */,
+				F616911628B3A92800F513DC /* View */,
+				F616911428B3A91D00F513DC /* ViewModel */,
+				F616911528B3A92300F513DC /* Controllers */,
+			);
+			path = TodoList;
+			sourceTree = "<group>";
+		};
+		F616911328B3A90C00F513DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F616911728B3A94900F513DC /* TodoListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F616911428B3A91D00F513DC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F616911928B3A97100F513DC /* BaseView.swift */,
+				F616911B28B3A99F00F513DC /* BaseViewController.swift */,
+				F616912728B3B55200F513DC /* BaseCollectionViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F616911528B3A92300F513DC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F616911F28B3AB1400F513DC /* TodoMainViewController.swift */,
+				F616912D28B3C47100F513DC /* TodoDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F616911628B3A92800F513DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F616911D28B3A9ED00F513DC /* TodoMainView.swift */,
+				F616912F28B3C48B00F513DC /* TodoDetailView.swift */,
+				F616912928B3B5B000F513DC /* TodoMainCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F616912428B3B45800F513DC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F616912528B3B46C00F513DC /* Transition+Extension.swift */,
+				F616912B28B3B65C00F513DC /* Protocol+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +169,12 @@
 			dependencies = (
 			);
 			name = "SeSAC Week8 DataBase Project";
+			packageProductDependencies = (
+				F616910B28B3A8AE00F513DC /* Kingfisher */,
+				F616910E28B3A8CD00F513DC /* Realm */,
+				F616911028B3A8CD00F513DC /* RealmSwift */,
+				F616912228B3B2D100F513DC /* SnapKit */,
+			);
 			productName = "SeSAC Week8 DataBase Project";
 			productReference = F61690F328B3A86800F513DC /* SeSAC Week8 DataBase Project.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +203,11 @@
 				Base,
 			);
 			mainGroup = F61690EA28B3A86800F513DC;
+			packageReferences = (
+				F616910A28B3A8AE00F513DC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F616910D28B3A8CD00F513DC /* XCRemoteSwiftPackageReference "realm-swift" */,
+				F616912128B3B2D100F513DC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F61690F428B3A86800F513DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +235,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61690FB28B3A86800F513DC /* ViewController.swift in Sources */,
+				F616912628B3B46C00F513DC /* Transition+Extension.swift in Sources */,
+				F616911C28B3A99F00F513DC /* BaseViewController.swift in Sources */,
+				F616912828B3B55200F513DC /* BaseCollectionViewCell.swift in Sources */,
+				F616912C28B3B65D00F513DC /* Protocol+Extension.swift in Sources */,
+				F616913028B3C48B00F513DC /* TodoDetailView.swift in Sources */,
+				F616911E28B3A9ED00F513DC /* TodoMainView.swift in Sources */,
+				F616912E28B3C47100F513DC /* TodoDetailViewController.swift in Sources */,
 				F61690F728B3A86800F513DC /* AppDelegate.swift in Sources */,
 				F61690F928B3A86800F513DC /* SceneDelegate.swift in Sources */,
+				F616911828B3A94900F513DC /* TodoListModel.swift in Sources */,
+				F616912028B3AB1400F513DC /* TodoMainViewController.swift in Sources */,
+				F616912A28B3B5B000F513DC /* TodoMainCollectionViewCell.swift in Sources */,
+				F616911A28B3A97100F513DC /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +400,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +413,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,8 +430,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +443,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +469,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F616910A28B3A8AE00F513DC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		F616910D28B3A8CD00F513DC /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		F616912128B3B2D100F513DC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F616910B28B3A8AE00F513DC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F616910A28B3A8AE00F513DC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		F616910E28B3A8CD00F513DC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F616910D28B3A8CD00F513DC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		F616911028B3A8CD00F513DC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F616910D28B3A8CD00F513DC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		F616912228B3B2D100F513DC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F616912128B3B2D100F513DC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F61690EB28B3A86800F513DC /* Project object */;
 }
