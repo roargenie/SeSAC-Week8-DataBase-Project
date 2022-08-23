@@ -27,7 +27,22 @@ class TodoList: Object {
     
 }
 
-
+class ShoppingList: Object {
+    
+    @Persisted var title: String
+    @Persisted var favorite: Bool
+    @Persisted var check: Bool
+    
+    @Persisted(primaryKey: true) var objectId: ObjectId
+    
+    convenience init(title: String) {
+        self.init()
+        self.title = title
+        self.favorite = false
+        self.check = false
+    }
+    
+}
 
 
 

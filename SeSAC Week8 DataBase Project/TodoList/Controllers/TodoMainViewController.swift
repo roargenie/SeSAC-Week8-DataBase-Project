@@ -33,18 +33,26 @@ class TodoMainViewController: BaseViewController {
     
     func setNavigationItem() {
         self.title = "나의 할 일"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(rightBarButtonTapped))
+        let plusBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(rightPlusBarButtonTapped))
+        let listBarButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(rightListBarButtonTapped))
+        navigationItem.rightBarButtonItems = [plusBarButton, listBarButton]
     }
     
-    @objc func rightBarButtonTapped() {
+    @objc func rightPlusBarButtonTapped() {
         let vc = TodoDetailViewController()
         transition(vc, transitionStyle: .push)
     }
     
+    @objc func rightListBarButtonTapped() {
+        let vc = TodoSecondDetailViewController()
+        transition(vc, transitionStyle: .push)
+    }
+    
     @objc func checkButtonTapped(sender: UIButton) {
-        //tasks[sender.tag].todoCheck = !tasks[sender]
-        
-        mainView.collectionView.reloadItems(at: [IndexPath(item: sender.tag, section: 0)])
+        try! localRealm.write {
+            self.tasks[sender.tag].todoCheck = !self.tasks[sender.tag].todoCheck
+            mainView.collectionView.reloadItems(at: [IndexPath(item: sender.tag, section: 0)])
+        }
     }
     
     override func configure() {
@@ -67,6 +75,7 @@ extension TodoMainViewController: UICollectionViewDelegate, UICollectionViewData
         cell.backgroundColor = .lightGray
         cell.checkButton.tag = indexPath.item
         cell.checkButton.addTarget(self, action: #selector(checkButtonTapped(sender:)), for: .touchUpInside)
+        
         let data = tasks[indexPath.item]
         
         let value = data.todoCheck ? "checkmark.square.fill" : "checkmark.square"

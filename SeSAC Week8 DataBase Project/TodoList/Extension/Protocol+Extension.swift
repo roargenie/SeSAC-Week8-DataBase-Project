@@ -21,4 +21,8 @@ extension UICollectionViewCell: ReusableViewProtocol {
     }
 }
 
-
+extension UITableViewCell: ReusableViewProtocol {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}

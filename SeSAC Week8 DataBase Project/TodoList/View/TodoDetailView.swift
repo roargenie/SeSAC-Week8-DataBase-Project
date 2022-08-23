@@ -3,7 +3,7 @@
 import UIKit
 import SnapKit
 
-class TodoDetailView: BaseView {
+class TodoDetailView: BaseView{
     
     let textView: UITextView = {
         let view = UITextView()
@@ -12,6 +12,8 @@ class TodoDetailView: BaseView {
         view.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         return view
     }()
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +31,7 @@ class TodoDetailView: BaseView {
         textView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
+        
     }
     
 }

@@ -3,13 +3,11 @@
 import UIKit
 
 
-
-
 class TodoMainCollectionViewCell: BaseCollectionViewCell {
     
     let checkButton: UIButton = {
         let view = UIButton()
-        view.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        //view.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         return view
     }()
     

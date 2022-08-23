@@ -17,6 +17,7 @@ class TodoDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.textView.delegate = self
+        
         setNavigationItem()
     }
     
@@ -37,7 +38,6 @@ class TodoDetailViewController: BaseViewController {
             localRealm.add(task)
             self.navigationController?.popViewController(animated: true)
         }
-        
     }
     
     override func configure() {
@@ -60,4 +60,5 @@ extension TodoDetailViewController: UITextViewDelegate {
         self.view.endEditing(true)
     }
 }
+
 
