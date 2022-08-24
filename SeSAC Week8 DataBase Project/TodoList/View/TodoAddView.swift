@@ -6,6 +6,13 @@ import SnapKit
 
 class TodoAddView: BaseView {
     
+    let collectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: mainCollectionViewLayout())
+        view.backgroundColor = .systemPurple
+        view.register(TodoAddCollectionViewCell.self, forCellWithReuseIdentifier: TodoAddCollectionViewCell.reuseIdentifier)
+        return view
+    }()
+    
     lazy var textView: UITextView = {
         let view = UITextView()
         view.backgroundColor = .blue
@@ -16,10 +23,17 @@ class TodoAddView: BaseView {
     
     let doneButton: UIButton = {
         let view = UIButton()
-        view.setTitle("완료", for: .normal)
+        view.setTitle("저장", for: .normal)
         view.backgroundColor = .systemBlue
         view.layer.cornerRadius = 12
-        
+        return view
+    }()
+    
+    let cancelButton: UIButton = {
+        let view = UIButton()
+        view.setTitle("취소", for: .normal)
+        view.backgroundColor = .systemBlue
+        view.layer.cornerRadius = 12
         return view
     }()
     
@@ -32,7 +46,7 @@ class TodoAddView: BaseView {
     }
     
     override func configureUI() {
-        [textView, doneButton].forEach { self.addSubview($0) }
+        [textView, doneButton, cancelButton, collectionView].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -46,8 +60,32 @@ class TodoAddView: BaseView {
         doneButton.snp.makeConstraints { make in
             make.top.equalTo(textView.snp.bottom).offset(20)
             make.trailing.equalTo(self.snp.trailing).offset(-20)
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(40)
         }
+        
+        cancelButton.snp.makeConstraints { make in
+            make.top.equalTo(textView.snp.bottom).offset(20)
+            make.leading.equalTo(self.snp.leading).offset(20)
+            make.width.height.equalTo(40)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(textView.snp.bottom).offset(80)
+            make.leading.equalTo(self.safeAreaLayoutGuide)
+            make.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
+        }
+    }
+    
+    static func mainCollectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        let deviceWidth: CGFloat = UIScreen.main.bounds.width
+        let itemSize: CGFloat = deviceWidth / 2
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        layout.scrollDirection = .vertical
+        return layout
     }
     
 }

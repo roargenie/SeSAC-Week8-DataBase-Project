@@ -23,7 +23,7 @@ class TodoSecondDetailViewController: BaseViewController {
         super.viewDidLoad()
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
-        mainView.tableView.rowHeight = 50
+        mainView.tableView.rowHeight = 100
         
         tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "favorite", ascending: false)
         self.title = "쇼핑 리스트"
@@ -47,6 +47,8 @@ class TodoSecondDetailViewController: BaseViewController {
         }
         let date = UIAction(title: "등록날짜 순으로", image: UIImage(systemName: "calendar")) { _ in
             print("클릭되었습니다")
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "date", ascending: true)
+            self.mainView.tableView.reloadData()
         }
         
         let title = UIAction(title: "제목 순으로", image: UIImage(systemName: "pencil")) { _ in
@@ -56,12 +58,11 @@ class TodoSecondDetailViewController: BaseViewController {
         }
         
         sortButton.menu = UIMenu(title: "정렬하기", image: nil, identifier: nil, options: .displayInline, children: [check, date, title])
+        
         navigationItem.rightBarButtonItems = [sortButton, addButton]
     }
     
     @objc func sortButtonTapped() {
-        
-        
         
     }
     
@@ -100,14 +101,22 @@ extension TodoSecondDetailViewController: UITableViewDelegate, UITableViewDataSo
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TodoDetailTableViewCell.reuseIdentifier, for: indexPath) as? TodoDetailTableViewCell else { return UITableViewCell() }
         
         let data = tasks[indexPath.row]
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateStyle = .full
+        formatter.timeStyle = .medium
+        let stringDate = formatter.string(from: data.date)
+        
         cell.titleLabel.text = data.title
+        cell.dateLabel.text = stringDate
+        cell.thumbnailImageView.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         cell.backgroundColor = .systemPurple
         
         cell.checkMarkButton.tag = indexPath.row
         cell.checkMarkButton.addTarget(self, action: #selector(checkMarkButtonToggle(_:)), for: .touchUpInside)
         let checkImage = data.check ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
         cell.checkMarkButton.setImage(checkImage, for: .normal)
-        
         
         return cell
     }

@@ -18,9 +18,34 @@ class TodoDetailTableViewCell: BaseTableViewCell {
     let titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = .white
-        view.font = .systemFont(ofSize: 12, weight: .bold)
-        //view.backgroundColor = .systemGray5
+        view.font = .systemFont(ofSize: 14, weight: .bold)
         view.numberOfLines = 1
+        return view
+    }()
+    
+    let dateLabel: UILabel = {
+        let view = UILabel()
+        view.textColor = .white
+        view.font = .systemFont(ofSize: 10, weight: .bold)
+        view.numberOfLines = 1
+        return view
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [titleLabel, dateLabel])
+        view.axis = .vertical
+        view.alignment = .fill
+        view.distribution = .fillEqually
+        view.spacing = 5
+        return view
+    }()
+    
+    let thumbnailImageView: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        view.layer.borderColor = UIColor.white.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -33,7 +58,7 @@ class TodoDetailTableViewCell: BaseTableViewCell {
     }
     
     override func configure() {
-        [checkMarkButton, titleLabel].forEach { self.contentView.addSubview($0) }
+        [checkMarkButton, stackView, thumbnailImageView].forEach { self.contentView.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -43,10 +68,17 @@ class TodoDetailTableViewCell: BaseTableViewCell {
             make.width.height.equalTo(50)
         }
         
-        titleLabel.snp.makeConstraints { make in
+        thumbnailImageView.snp.makeConstraints { make in
+            make.trailing.equalTo(self.snp.trailing).offset(-12)
+            make.width.height.equalTo(80)
             make.centerY.equalTo(checkMarkButton.snp.centerY)
+        }
+        
+        stackView.snp.makeConstraints { make in
             make.leading.equalTo(checkMarkButton.snp.trailing).offset(12)
-            make.trailing.lessThanOrEqualTo(self.snp.trailing).offset(-12)
+            make.centerY.equalTo(checkMarkButton.snp.centerY)
+            make.trailing.equalTo(thumbnailImageView.snp.leading).offset(-12)
+            make.height.equalTo(60)
         }
     }
     

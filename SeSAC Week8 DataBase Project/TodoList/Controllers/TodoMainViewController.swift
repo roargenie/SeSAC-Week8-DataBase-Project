@@ -35,7 +35,13 @@ class TodoMainViewController: BaseViewController {
         self.title = "나의 할 일"
         let plusBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(rightPlusBarButtonTapped))
         let listBarButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(rightListBarButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "백업", style: .plain, target: self, action: #selector(backupBarButtonTapped))
         navigationItem.rightBarButtonItems = [plusBarButton, listBarButton]
+    }
+    
+    @objc func backupBarButtonTapped() {
+        let vc = TodoBackupViewController()
+        transition(vc, transitionStyle: .push)
     }
     
     @objc func rightPlusBarButtonTapped() {
