@@ -24,6 +24,7 @@ class TodoMainViewController: BaseViewController {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
         setNavigationItem()
+        fetchDocumentZipFile()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -31,6 +31,8 @@
 		F616913728B4F68700F513DC /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616913628B4F68700F513DC /* BaseTableViewCell.swift */; };
 		F616913928B5031600F513DC /* TodoSecondDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616913828B5031600F513DC /* TodoSecondDetailView.swift */; };
 		F616913B28B503AC00F513DC /* TodoSecondDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616913A28B503AC00F513DC /* TodoSecondDetailViewController.swift */; };
+		F62A5A7628B7016C00DC8384 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = F62A5A7528B7016C00DC8384 /* Zip */; };
+		F62A5A7928B8559600DC8384 /* ShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A5A7828B8559600DC8384 /* ShoppingListRepository.swift */; };
 		F67A69DA28B50BF9008676DF /* TodoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A69D928B50BF9008676DF /* TodoAddViewController.swift */; };
 		F67A69DC28B50C33008676DF /* TodoAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A69DB28B50C33008676DF /* TodoAddView.swift */; };
 		F6BFA14928B6308E0038CC45 /* TodoBackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BFA14828B6308E0038CC45 /* TodoBackupView.swift */; };
@@ -64,6 +66,7 @@
 		F616913628B4F68700F513DC /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F616913828B5031600F513DC /* TodoSecondDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSecondDetailView.swift; sourceTree = "<group>"; };
 		F616913A28B503AC00F513DC /* TodoSecondDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSecondDetailViewController.swift; sourceTree = "<group>"; };
+		F62A5A7828B8559600DC8384 /* ShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepository.swift; sourceTree = "<group>"; };
 		F67A69D928B50BF9008676DF /* TodoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddViewController.swift; sourceTree = "<group>"; };
 		F67A69DB28B50C33008676DF /* TodoAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddView.swift; sourceTree = "<group>"; };
 		F6BFA14828B6308E0038CC45 /* TodoBackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoBackupView.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 				F616912328B3B2D100F513DC /* SnapKit in Frameworks */,
 				F616910F28B3A8CD00F513DC /* Realm in Frameworks */,
 				F616910C28B3A8AE00F513DC /* Kingfisher in Frameworks */,
+				F62A5A7628B7016C00DC8384 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +140,7 @@
 			children = (
 				F616911728B3A94900F513DC /* TodoListModel.swift */,
 				F6BFA15128B64D380038CC45 /* DummyData.swift */,
+				F62A5A7828B8559600DC8384 /* ShoppingListRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				F616910E28B3A8CD00F513DC /* Realm */,
 				F616911028B3A8CD00F513DC /* RealmSwift */,
 				F616912228B3B2D100F513DC /* SnapKit */,
+				F62A5A7528B7016C00DC8384 /* Zip */,
 			);
 			productName = "SeSAC Week8 DataBase Project";
 			productReference = F61690F328B3A86800F513DC /* SeSAC Week8 DataBase Project.app */;
@@ -243,6 +249,7 @@
 				F616910A28B3A8AE00F513DC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F616910D28B3A8CD00F513DC /* XCRemoteSwiftPackageReference "realm-swift" */,
 				F616912128B3B2D100F513DC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F62A5A7428B7016C00DC8384 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = F61690F428B3A86800F513DC /* Products */;
 			projectDirPath = "";
@@ -272,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6BFA15228B64D380038CC45 /* DummyData.swift in Sources */,
+				F62A5A7928B8559600DC8384 /* ShoppingListRepository.swift in Sources */,
 				F616913528B4F4F700F513DC /* TodoDetailTableViewCell.swift in Sources */,
 				F616912628B3B46C00F513DC /* Transition+Extension.swift in Sources */,
 				F6BFA14928B6308E0038CC45 /* TodoBackupView.swift in Sources */,
@@ -543,6 +551,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F62A5A7428B7016C00DC8384 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -565,6 +581,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F616912128B3B2D100F513DC /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F62A5A7528B7016C00DC8384 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F62A5A7428B7016C00DC8384 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

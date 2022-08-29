@@ -5,6 +5,12 @@ import UIKit
 
 extension UIViewController {
     
+    func documentDirectoryPath() -> URL? {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        
+        return documentDirectory
+    }
+    
     // MARK: - Document에서 이미지 가져와서 보여주기
     // 보여줄 이미지
     func loadImageFromDocument(fileName: String) -> UIImage? {
@@ -23,20 +29,6 @@ extension UIViewController {
 //        return image
     }
     
-    // MARK: - Document에서 삭제하기
-    
-    func removeImageFromDocument(fileName: String) {
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        
-        let fileURL = documentDirectory.appendingPathComponent(fileName)
-        
-        do {
-            try FileManager.default.removeItem(at: fileURL)
-        } catch let error {
-            print(error)
-        }
-    }
-    
     // MARK: - Document에 저장하기
     
     func saveImageToDocument(fileName: String, image: UIImage) {
@@ -52,6 +44,23 @@ extension UIViewController {
             print("file save error", error)
         }
         
+    }
+    
+    func fetchDocumentZipFile() {
+        do {
+            guard let path = documentDirectoryPath() else { return }
+            
+            let docs = try FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil)
+            print("docs: \(docs)")
+            
+            let zip = docs.filter { $0.pathExtension == "zip" }
+            
+            let result = zip.map { $0.lastPathComponent }
+            print("result: \(result)")
+            
+        } catch {
+            print("Error")
+        }
     }
     
 }

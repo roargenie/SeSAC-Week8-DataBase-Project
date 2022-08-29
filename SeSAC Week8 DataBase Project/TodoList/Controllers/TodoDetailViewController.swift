@@ -8,7 +8,9 @@ class TodoDetailViewController: BaseViewController {
     
     var mainView = TodoDetailView()
     
-    let localRealm = try! Realm()
+//    let localRealm = try! Realm()
+    
+    let repository = ShoppingListRepository()
     
     override func loadView() {
         self.view = mainView
@@ -34,8 +36,8 @@ class TodoDetailViewController: BaseViewController {
         
         let task = TodoList(todoTitle: "", todoContent: text, regDate: Date(), todoDate: Date())
         
-        try! localRealm.write {
-            localRealm.add(task)
+        try! repository.localRealm.write {
+            repository.localRealm.add(task)
             self.navigationController?.popViewController(animated: true)
         }
     }

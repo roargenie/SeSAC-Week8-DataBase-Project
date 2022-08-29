@@ -10,9 +10,13 @@ class TodoSecondDetailViewController: BaseViewController {
     
     var mainView = TodoSecondDetailView()
     
-    let localRealm = try! Realm()
+    let repository = ShoppingListRepository()
     
-    var tasks: Results<ShoppingList>!
+    var tasks: Results<ShoppingList>! {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     
     
     override func loadView() {
@@ -21,19 +25,18 @@ class TodoSecondDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
-        mainView.tableView.rowHeight = 100
-        
-        tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "favorite", ascending: false)
-        self.title = "쇼핑 리스트"
-        
+//        tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "favorite", ascending: false)
         setNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainView.tableView.reloadData()
+        fetchRealm()
+        //mainView.tableView.reloadData()
+    }
+    
+    func fetchRealm() {
+        tasks = repository.fetch()
     }
     
     func setNavigationItem() {
@@ -42,18 +45,18 @@ class TodoSecondDetailViewController: BaseViewController {
         
         let check = UIAction(title: "완료된 순으로", image: UIImage(systemName: "heart.fill")) { _ in
             print("클릭되었습니다")
-            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "check", ascending: true)
+            self.tasks = self.repository.sortItem(style: .check)
             self.mainView.tableView.reloadData()
         }
         let date = UIAction(title: "등록날짜 순으로", image: UIImage(systemName: "calendar")) { _ in
             print("클릭되었습니다")
-            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "date", ascending: true)
+            self.tasks = self.repository.sortItem(style: .date)
             self.mainView.tableView.reloadData()
         }
         
         let title = UIAction(title: "제목 순으로", image: UIImage(systemName: "pencil")) { _ in
             print("클릭되었습니다")
-            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "title", ascending: true)
+            self.tasks = self.repository.sortItem(style: .title)
             self.mainView.tableView.reloadData()
         }
         
@@ -72,16 +75,21 @@ class TodoSecondDetailViewController: BaseViewController {
     }
     
     @objc func checkMarkButtonToggle(_ sender: UIButton) {
-        try! localRealm.write {
-            self.tasks[sender.tag].check = !self.tasks[sender.tag].check
-            self.mainView.tableView.reloadData()
-            //self.mainView.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
-        }
-       
+        repository.updateCheck(item: tasks[sender.tag])
+        //mainView.tableView.reloadData()
+//        try! localRealm.write {
+//            self.tasks[sender.tag].check = !self.tasks[sender.tag].check
+//            self.mainView.tableView.reloadData()
+//            //self.mainView.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+//        }
+        
     }
     
     override func configure() {
-        
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+        mainView.tableView.rowHeight = 100
+        self.title = "쇼핑 리스트"
     }
     
     override func setConstraints() {
@@ -126,20 +134,21 @@ extension TodoSecondDetailViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
-            tableView.beginUpdates()
-            try! localRealm.write {
-                localRealm.delete(tasks[indexPath.row])
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                tableView.endUpdates()
-            }
+            repository.deleteItem(item: tasks[indexPath.row])
+//            tableView.beginUpdates()
+//            try! localRealm.write {
+//                localRealm.delete(tasks[indexPath.row])
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//                tableView.endUpdates()
+//            }
+//            removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         }
     }
     
 //    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 //
 //    }
-    
-    
     
 }
